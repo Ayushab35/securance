@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/About_pol.css";
 function Abt_pol(){
+    
     return ( 
         <div className="abt">
             <div className="abt-head">

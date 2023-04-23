@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Dashboard from "./Dasboard"
 import Login from "./Login";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   BrowserRouter,
@@ -12,12 +11,23 @@ import {
 import Home from "./Home";
 import Policy from "./Policy";
 import AbtPol from "./Abt_pol";
+import FormDataContext from './ContextData';
+import { useState } from "react";
 
 function App() {
+  const [formData, setFormData] = useState({
+    fName: "Ayush",
+  });
+  
+  const state = {
+    formData: formData,
+    setFormData: setFormData
+  }
+
   return (
     <div>
       <Home />
-      <BrowserRouter>
+      <FormDataContext.Provider value={state}>
         <Routes>
           <Route exact path="/" element={<Main />}></Route>
           <Route exact path="/policy" element={<Policy />}></Route>
@@ -25,7 +35,7 @@ function App() {
           <Route exact path="/dashboard" element={<Dashboard />}></Route>
           <Route exact path="/abtpol" element={<AbtPol />}></Route>
         </Routes>
-      </BrowserRouter>
+      </FormDataContext.Provider>
       <Footer />
     </div>
   );
