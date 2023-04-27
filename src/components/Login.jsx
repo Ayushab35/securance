@@ -3,7 +3,8 @@ import "../css/Login.css";
 import FormDataContext from "./ContextData";
 import Web3 from "web3";
 import { useNavigate } from "react-router";
-
+import Home from "./Home";
+import Footer from "./Footer";
 function Login() {
   const [account, setAccount] = useState("");
   const [isConnected, setIsConnected] = useState(false);
@@ -32,9 +33,7 @@ function Login() {
       metamask_id: account,
     };
     setFormData(data);
-    localStorage.setItem("formData", JSON.stringify(data));
-    
-    
+    localStorage.setItem("formData", JSON.stringify(data));    
     setTimeout(function () {
       localStorage.removeItem("formData");
     }, 20 * 60 * 1000);
@@ -68,6 +67,9 @@ function Login() {
   }, []);
 
   return (
+    <>
+      <Home />
+    
     <div className="login-pg">
       <h1 className="fh1">Signup / </h1>
       <h1>Login</h1>
@@ -109,7 +111,8 @@ function Login() {
         </form>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
-
 export default Login;

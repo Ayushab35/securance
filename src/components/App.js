@@ -1,6 +1,5 @@
 import React from "react";
 import Main from "./Main";
-import Footer from "./Footer";
 import Dashboard from "./Dasboard"
 import Login from "./Login";
 import {
@@ -8,11 +7,12 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
-import Home from "./Home";
+import BuyPol from "./BuyPol";
 import Policy from "./Policy";
 import AbtPol from "./Abt_pol";
 import FormDataContext from './ContextData';
 import { useState } from "react";
+import CyberHome from "./CyberHome";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -26,7 +26,6 @@ function App() {
 
   return (
     <div>
-      <Home />
       <FormDataContext.Provider value={state}>
         <Routes>
           <Route exact path="/" element={<Main />}></Route>
@@ -34,9 +33,10 @@ function App() {
           <Route exact path="/login" element={<Login />}></Route>
           <Route exact path="/dashboard" element={<Dashboard />}></Route>
           <Route exact path="/abtpol" element={<AbtPol />}></Route>
+          <Route exact path="/cyber" element={<CyberHome />}></Route>
+          <Route exact path="/buypol" element={<BuyPol />}></Route>
         </Routes>
       </FormDataContext.Provider>
-      <Footer />
     </div>
   );
 }

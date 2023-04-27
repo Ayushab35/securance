@@ -1,8 +1,12 @@
 import React from "react";
 import "../css/About_pol.css";
+import Footer from "./Footer";
+import Home from "./Home";
 function Abt_pol(){
     
     return ( 
+        <>
+        <Home />
         <div className="abt">
             <div className="abt-head">
                 <h1><b>Policy : </b>Phishing Attack</h1>
@@ -28,6 +32,8 @@ function Abt_pol(){
                 <p>Please note that these are general guidelines only, and the specific terms and conditions of an insurance policy may vary depending on the insurance provider and the type of coverage being offered. It is important to carefully review the policy documents and consult with an insurance professional before purchasing any insurance product.</p>
             </div>
         </div>
+        <Footer />
+        </>
     );
 }
 

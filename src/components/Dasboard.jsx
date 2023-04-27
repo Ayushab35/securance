@@ -4,6 +4,9 @@ import policy from "../images/Policy.png";
 import FormDataContext from "./ContextData";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Table from "./Table";
+import Home from "./Home";
+import Footer from "./Footer";
 function Dashboard() {
     const {formData} = useContext(FormDataContext);
     const [data, setData] = useState({});
@@ -17,6 +20,8 @@ function Dashboard() {
     }, []);
 
   return (
+    <>
+      <Home />
     <div className="dash">
       <div className="dash-left">
         <h3>
@@ -25,6 +30,7 @@ function Dashboard() {
         </h3>
       </div>
       <div className="dash-right">
+
         <div className="policy-head">
           <div className="ph-hlf1">
             <div className="pol-name">
@@ -51,8 +57,14 @@ function Dashboard() {
             </div>
           </div>
         </div>
+        <div className="claim-btn">
+          <button><Link to ="/Cyber">Claim</Link></button>
+        </div>
+        <Table />
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
 

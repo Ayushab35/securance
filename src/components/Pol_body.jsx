@@ -2,6 +2,8 @@ import React from "react";
 import "../css/Policy.css"
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+
+
 function Pol_body(){
     const [claimAmount, setClaimAmount] = useState('');
 
@@ -12,7 +14,7 @@ function Pol_body(){
     const navigate = useNavigate()
     
     function handleClick() {
-        navigate('/abtpol')   
+        navigate('/buypol')   
     }
     function handleCalculate() {
         const claimValue = parseInt(claimAmount);

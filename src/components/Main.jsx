@@ -1,9 +1,12 @@
 import React from "react";
 import '../css/App.css';
 import img5 from '../images/pic5.svg'
-
+import Home from "./Home";
+import Footer from "./Footer";
 function Main(){
     return (
+        <>
+        <Home />
         <div className="container"> 
         <main className='bkg-img' />
         <div className='why-sec'>
@@ -21,6 +24,8 @@ function Main(){
             </div>
         </div>
         </div>
+        <Footer />
+        </>
     );
 }
 
